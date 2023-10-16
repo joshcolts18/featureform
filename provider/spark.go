@@ -670,6 +670,10 @@ func (store *SparkOfflineStore) Close() error {
 	return nil
 }
 
+func (store *SparkOfflineStore) Check() (bool, error) {
+	return false, fmt.Errorf("provider health check not implemented")
+}
+
 func sparkOfflineStoreFactory(config pc.SerializedConfig) (Provider, error) {
 	sc := pc.SparkConfig{}
 	logger := logging.NewLogger("spark")
